@@ -25,7 +25,8 @@ public class WordsCounterTest {
 		assertEquals(0, wordsCounter.getCount(EMPTY_WORD));
 		assertEquals(0, wordsCounter.getCount(SPACE));
 		assertEquals(0, wordsCounter.getCount(TEST_WORD));
-		assertEquals(0, wordsCounter.getCount(TEST_SYMBOL));		
+		assertEquals(0, wordsCounter.getCount(TEST_SYMBOL));	
+		
 	}
 
 	@Test
