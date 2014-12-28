@@ -58,6 +58,7 @@ public class WordsCounterTest {
 		assertEquals(2, wordsCounter.getCount("test word"));
 		assertEquals(0, wordsCounter.getCount("test"));
 		assertEquals(0, wordsCounter.getCount("test "));
+		assertEquals(0, wordsCounter.getCount(" test "));
 		assertEquals(0, wordsCounter.getCount("word"));
 		assertEquals(0, wordsCounter.getCount(" word"));
 	}
