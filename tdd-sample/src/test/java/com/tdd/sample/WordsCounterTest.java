@@ -13,10 +13,11 @@ public class WordsCounterTest {
 	public void setUp() throws Exception {
 		wordsCounter = new WordsCounter();
 	}
-
+	
 	@Test
 	public void testGetCountForNull() {
 		wordsCounter.count(null);
+		assertEquals(0, wordsCounter.getCount(null));
 		assertEquals(0, wordsCounter.getCount(""));
 		assertEquals(0, wordsCounter.getCount(" "));
 		assertEquals(0, wordsCounter.getCount("word"));
