@@ -68,8 +68,7 @@ public abstract class WordsCounterAbstractTest {
 		assertEquals(1, getWordsCounter().getCount(" word "));
 		assertEquals(0, getWordsCounter().getCount("words"));
 		getWordsCounter().count("ABCDEFGhijklmnopQrsTUvWxYz");
-		assertEquals(1, getWordsCounter()
-				.getCount("ABCDEFGhijklmnopQrsTUvWxYz"));
+		assertEquals(1, getWordsCounter().getCount("ABCDEFGhijklmnopQrsTUvWxYz"));
 	}
 
 	@Test

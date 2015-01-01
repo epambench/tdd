@@ -2,6 +2,11 @@ package com.tdd.sample;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * This class represents an implementation of <code>WordsCounter</code>
+ * interface based on <code>WordsCounterImpl</code> class with different
+ * behavior. This implementation calculates only alphabetic words.
+ */
 public class WordsCounterProxy implements WordsCounter {
 
 	private WordsCounter wordsCounter;
@@ -10,12 +15,9 @@ public class WordsCounterProxy implements WordsCounter {
 		this.wordsCounter = wordsCounter;
 	}
 
-	public void count(String word) {
-		if (!StringUtils.isBlank(word) && isAlpha(word)) {
-			wordsCounter.count(word);
-		}
-	}
-
+	/**
+	 * Return false if any character of incoming word is not alphabetic.
+	 */
 	private boolean isAlpha(String word) {
 		char[] chars = word.toCharArray();
 		for (char charr : chars) {
@@ -24,6 +26,15 @@ public class WordsCounterProxy implements WordsCounter {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * {@inheritDoc} Only characters can be recognized as a word.
+	 */
+	public void count(String word) {
+		if (!StringUtils.isBlank(word) && isAlpha(word)) {
+			wordsCounter.count(word);
+		}
 	}
 
 	public int getCount(String word) {

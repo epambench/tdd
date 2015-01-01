@@ -13,6 +13,10 @@ public class WordsCounterImpl implements WordsCounter {
 		wordsOccurence = new HashMap<String, Integer>();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *  Null, empty or blank strings are not calculated.
+	 */
 	public void count(String word) {
 		if (!StringUtils.isBlank(word)) {
 			int counter = 0;
