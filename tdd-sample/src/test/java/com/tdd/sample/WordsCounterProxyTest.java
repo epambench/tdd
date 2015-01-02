@@ -28,6 +28,12 @@ public class WordsCounterProxyTest extends WordsCounterAbstractTest {
 		assertEquals(0, getWordsCounter().getCount("<>+_=|/"));
 		getWordsCounter().count(",.");
 		assertEquals(0, getWordsCounter().getCount(",."));
+		getWordsCounter().count("asd4asd5");
+		assertEquals(0, getWordsCounter().getCount("asd4asd5"));
+		getWordsCounter().count(" a  b");
+		assertEquals(1, getWordsCounter().getCount(" a  b"));
+		getWordsCounter().count("dasdf dsad 4 sadfa");
+		assertEquals(0, getWordsCounter().getCount("dasdf dsad 4 sadfa"));
 	}
 
 	@Test
